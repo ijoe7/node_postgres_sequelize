@@ -1,0 +1,25 @@
+{
+  "name": "metacare",
+  "version": "1.0.0",
+  "description": "Backend Star wars info",
+  "main": "app.js",
+  "author": "Oluwasegun Iyanda",
+  "license": "MIT",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "dependencies": {
+    "axios": "^0.25.0",
+    "body-parser": "^1.19.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.2",
+    "express-handlebars": "^6.0.2",
+    "pg": "^8.7.1",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.13.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
