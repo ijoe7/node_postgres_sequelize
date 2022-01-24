@@ -20,13 +20,6 @@ exports.getMovies = async (req, res) => {
                     comment_count: 0
                 });
             }
-            // let { title, opening_crawl, comment_count } = req.body;
-            // Insert into table
-            // const movie = await Movie.create({
-            //     title,
-            //     opening_crawl,
-            //     comment_count
-            // });
             let savedData = await Movie.findAll({
               include: ["comments"],
               order: [["id", "ASC"]]
@@ -86,8 +79,6 @@ exports.deleteMovieComment = async (req, res) => {
         movie.save();
         // destroy comment and restart id sequence
         comment.destroy({ truncate: true, restartIdentity: false });
-        // reset id auto increment
-        // await db.query(`ALTER SEQUENCE comments_id_seq RESTART WITH 1`);
 
         res.status(200).send(comment);
     } catch (error) {
@@ -98,11 +89,6 @@ exports.deleteMovieComment = async (req, res) => {
 
 exports.movieCharactersInfo = async (req, res) => {
     try {
-        // const movieId = req.params.movieId;
-        // const movie = await Movie.findByPk(movieId);
-        // const movieCharacters = await movie.getCharacters();
-        // res.status(200).send(movieCharacters);
-
         const { id } = req.params;
         let { nameSort, heightSort, genderSort, genderFilter } = req.query;
 
@@ -110,13 +96,6 @@ exports.movieCharactersInfo = async (req, res) => {
         
         const data = await axios.get(`https://swapi.py4e.com/api/films/${id}/`);
         const movieData = data.data;
-
-        // let characterList = [];
-        // let characterLink = "";
-        // let sortedData = [];
-        // let heightCount = 0;
-        // let heightInfo = ``;
-        // let result = {};
 
         let characterList = await helper.getCharacterList(movieData);
 

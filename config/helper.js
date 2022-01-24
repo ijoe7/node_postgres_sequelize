@@ -27,10 +27,6 @@ exports.getCharacterList = async (movieData) => {
         const character = await axios.get(characterLink);
         characterList.push(character.data);
     }
-    // let characterList = movieData.characters.map(async (characterLink) => {
-    //     const character = await axios.get(characterLink);
-    //     return character.data;
-    // });
     return characterList;
 };
 
