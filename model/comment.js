@@ -4,7 +4,7 @@ const Movie = require("./movie");
 
 const Comment = db.define("comment", {
     movie_comment: {
-        type: Sequelize.STRING(500),
+        type: Sequelize.STRING(5000),
         allowNull: false
     },
     ip_address: {
@@ -12,10 +12,5 @@ const Comment = db.define("comment", {
         allowNull: false
     }
 })
-
-// Comment.belongsTo(Movie, {
-//     foreignKey: "movie_id",
-//     as: "movie"
-// });
 
 module.exports = Comment;

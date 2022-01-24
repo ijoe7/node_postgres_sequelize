@@ -8,7 +8,7 @@ const Movie = db.define("movie", {
         allowNull: false
     },
     opening_crawl: {
-        type: Sequelize.STRING,
+        type: Sequelize.STRING(5000),
         allowNull: false
     },
     comment_count: {
@@ -16,9 +16,5 @@ const Movie = db.define("movie", {
         defaultValue: 0
     },
 })
-
-// Movie.hasMany(Comment, {
-//     as: "comments"
-// })
 
 module.exports = Movie;

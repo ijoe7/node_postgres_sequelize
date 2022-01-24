@@ -46,7 +46,8 @@ exports.getMovies = async (req, res) => {
 exports.getAllMovies = async (req, res) => {
     try {
         let databaseData = await Movie.findAll({
-            include: ["comments"]
+            include: ["comments"],
+            order: [["id", "ASC"]],
         });
         const reversedComments = helper.reverseComments(databaseData);
         res.status(200).send(reversedComments);

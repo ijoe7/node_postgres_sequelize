@@ -29,10 +29,19 @@ Comment.belongsTo(Movie, {
   as: "movie",
 });
 
+db.sync({
+  // force: false,
+})
+  .then(() => {
+    console.log("Database connected");
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+
 app.use(cors());
 app.use('/movieInfo', movieInfoRouter);
 
-// app.get('/', (req, res) => res.send('INDEX'));
 engines = {
   "node": "14.16.0",
   "npm": "8.1.0"
