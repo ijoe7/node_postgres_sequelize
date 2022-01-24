@@ -35,7 +35,7 @@ exports.getCharacterList = async (movieData) => {
 };
 
 exports.sortCharacters = (characterList, nameSort, genderSort, heightSort) => {
-    let sortedData = [];
+    let sortedData = characterList;
     if (nameSort) nameSort.toLowerCase();
     if (genderSort) genderSort.toLowerCase();
     if (heightSort) heightSort.toLowerCase();

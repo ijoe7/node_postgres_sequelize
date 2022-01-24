@@ -1,6 +1,5 @@
 const express = require('express');
 const app = express();
-const exphbs = require('express-handlebars');
 const bodyParser = require('body-parser');
 const path = require('path');
 const helper = require('./config/helper');
@@ -30,12 +29,14 @@ Comment.belongsTo(Movie, {
   as: "movie",
 });
 
-// db.models[""].destroy({ truncate: true, restartIdentity: true });
-
 app.use(cors());
 app.use('/movieInfo', movieInfoRouter);
 
-app.get('/', (req, res) => res.send('INDEX'));
+// app.get('/', (req, res) => res.send('INDEX'));
+engines = {
+  "node": "14.16.0",
+  "npm": "8.1.0"
+}
 
 const PORT = process.env.PORT || 5000;
 
