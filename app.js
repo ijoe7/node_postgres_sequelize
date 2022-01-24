@@ -42,6 +42,10 @@ db.sync({
 app.use(cors());
 app.use('/movieInfo', movieInfoRouter);
 
+app.use('/', (req, res) => {
+  res.send('Hello, Welcome to the Movie Info API');
+});
+
 engines = {
   "node": "14.16.0",
   "npm": "8.1.0"
