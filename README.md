@@ -4,7 +4,7 @@
 [Postman Documentation](https://documenter.getpostman.com/view/15642679/UVXqEsSz)
 
 ## Heroku Link:
-[Heroku link]()
+[Heroku link](https://metacare-backend-segun.herokuapp.com/)
 
 ## Work-done
 ### Created Endpoints for:
